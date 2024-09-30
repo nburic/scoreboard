@@ -34,7 +34,7 @@ class Scoreboard {
         _matchesInProgress.removeIf { it.homeTeam == homeTeam && it.awayTeam == awayTeam }
     }
 
-    fun getSummary(): List<String> {
-        return listOf()
+    fun getSummary(): List<Match> {
+        return matchesInProgress.sortedWith(compareByDescending<Match> { it.getTotalScore() }.thenByDescending { it.startTime })
     }
 }

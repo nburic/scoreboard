@@ -12,4 +12,8 @@ class Match(
     fun getTotalScore(): Int {
         return homeScore + awayScore
     }
+
+    override fun toString(): String {
+        return "${homeTeam} ${homeScore} - ${awayTeam} ${awayScore}"
+    }
 }

@@ -78,6 +78,6 @@ class ScoreboardTest {
         )
 
         assertEquals(5, scoreboard.matchesInProgress.count())
-        assertEquals(expectedListOfGames, scoreboard.getSummary())
+        assertEquals(expectedListOfGames, scoreboard.getSummary().map { it.toString() })
     }
 }
