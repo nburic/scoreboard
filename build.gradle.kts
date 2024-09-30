@@ -6,8 +6,7 @@ kotlin {
     jvmToolchain(22)
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
+version = "0.0.1"
 
 repositories {
     mavenCentral()

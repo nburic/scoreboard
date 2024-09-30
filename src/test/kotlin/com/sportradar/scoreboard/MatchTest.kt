@@ -1,6 +1,5 @@
 package com.sportradar.scoreboard
 
-import org.example.com.sportradar.scoreboard.Match
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 

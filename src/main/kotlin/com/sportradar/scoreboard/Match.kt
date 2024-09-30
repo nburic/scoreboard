@@ -1,4 +1,4 @@
-package org.example.com.sportradar.scoreboard
+package com.sportradar.scoreboard
 
 import java.time.LocalDateTime
 

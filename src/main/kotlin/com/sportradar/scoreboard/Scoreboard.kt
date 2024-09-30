@@ -1,7 +1,5 @@
 package com.sportradar.scoreboard
 
-import org.example.com.sportradar.scoreboard.Match
-
 class Scoreboard {
     private val _matchesInProgress: MutableList<Match> = mutableListOf()
     val matchesInProgress: List<Match> = _matchesInProgress
