@@ -33,4 +33,8 @@ class Scoreboard {
     fun finishGame(homeTeam: String, awayTeam: String) {
         _matchesInProgress.removeIf { it.homeTeam == homeTeam && it.awayTeam == awayTeam }
     }
+
+    fun getSummary(): List<String> {
+        return listOf()
+    }
 }
