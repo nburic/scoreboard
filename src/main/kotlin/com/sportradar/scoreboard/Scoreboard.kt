@@ -1,13 +1,15 @@
 package com.sportradar.scoreboard
 
+import org.example.com.sportradar.scoreboard.Match
+
 class Scoreboard {
-    private val _matchesInProgress: MutableList<Pair<String, String>> = mutableListOf()
-    val matchesInProgress: List<Pair<String, String>> = _matchesInProgress
+    private val _matchesInProgress: MutableList<Match> = mutableListOf()
+    val matchesInProgress: List<Match> = _matchesInProgress
 
     fun startGame(homeTeam: String, awayTeam: String) {
-        val match = Pair(homeTeam, awayTeam)
+        val match = Match(homeTeam, awayTeam)
 
-        val matchInProgress = _matchesInProgress.find { it.first == match.first && it.second == match.second }
+        val matchInProgress = _matchesInProgress.find { it.homeTeam == match.homeTeam && it.awayTeam == match.awayTeam }
         if (matchInProgress != null) {
             println("Match is already in progress.")
         } else {
