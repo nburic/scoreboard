@@ -43,4 +43,14 @@ class ScoreboardTest {
 
         assertEquals(5, match!!.getTotalScore())
     }
+
+    @Test
+    fun shouldFinishGame() {
+        val scoreboard = Scoreboard()
+        scoreboard.startGame("Mexico", "Canada")
+        scoreboard.updateScore("Mexico", "Canada", 0, 5)
+        scoreboard.finishGame("Mexico", "Canada")
+
+        assertEquals(0, scoreboard.matchesInProgress.count())
+    }
 }

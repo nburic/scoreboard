@@ -29,4 +29,8 @@ class Scoreboard {
             }
         }
     }
+
+    fun finishGame(homeTeam: String, awayTeam: String) {
+        return
+    }
 }
