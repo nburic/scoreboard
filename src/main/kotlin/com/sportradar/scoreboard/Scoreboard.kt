@@ -19,6 +19,14 @@ class Scoreboard {
     }
 
     fun updateScore(homeTeam: String, awayTeam: String, homeScore: Int, awayScore: Int) {
-        return
+        val matchInProgress = _matchesInProgress.find { it.homeTeam == homeTeam && it.awayTeam == awayTeam }
+        when {
+            matchInProgress == null -> println("Match is not in progress.")
+            homeScore < 0 || awayScore < 0 -> println("Incorrect params.")
+            else -> {
+                matchInProgress.homeScore = homeScore
+                matchInProgress.awayScore = awayScore
+            }
+        }
     }
 }
