@@ -18,4 +18,7 @@ class Scoreboard {
         }
     }
 
+    fun updateScore(homeTeam: String, awayTeam: String, homeScore: Int, awayScore: Int) {
+        return
+    }
 }
