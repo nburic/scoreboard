@@ -31,6 +31,6 @@ class Scoreboard {
     }
 
     fun finishGame(homeTeam: String, awayTeam: String) {
-        return
+        _matchesInProgress.removeIf { it.homeTeam == homeTeam && it.awayTeam == awayTeam }
     }
 }
