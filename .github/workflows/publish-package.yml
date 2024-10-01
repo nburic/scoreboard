@@ -8,6 +8,7 @@
 # You can also reference a tag or branch, but the action may change without warning.
 
 name: Publish package to GitHub Packages
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   release:
     types: [published]
@@ -29,10 +30,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
 
-      # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
-      # the publishing section of your build.gradle
       - name: Publish to GitHub Packages
         run: ./gradlew publish
         env:
-          GITHUB_USERNAME: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
