@@ -10,11 +10,10 @@ You can build the library by running a command:
 
 To change a version make sure to change it in `build.gradle.kts` file under `version`.
 
-To use the library you can import .jar file in your project. For example you can create a console app and include it in.
-
 ## Usage Example
 
-To use this library, add the following dependency to your project:
+### Import .jar file
+To use the library you can import .jar file in your project and add the following to build.gradle.kts file:
 
 ```kotlin
 dependencies {
@@ -22,7 +21,23 @@ dependencies {
 }
 ```
 
-Crete Main.kt file that looks like this:
+### Import as dependency from GitHub packages
+You can import it from GitHub packages as well. Add this to build.gradle.kts file:
+
+```kotlin
+repositories {
+    mavenCentral()
+    maven {
+        url = uri("https://maven.pkg.github.com/nburic/scoreboard")
+    }
+}
+
+dependencies {
+    implementation("com.github.nburic:scoreboard:0.0.1")
+}
+```
+
+Create Main.kt file that looks like this:
 
 ```kotlin
 fun main() {
