@@ -1,5 +1,5 @@
 name: Build and Test Kotlin Library
-
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches:
@@ -18,7 +18,7 @@ jobs:
           echo "GITHUB_USERNAME: $GITHUB_USERNAME"
           echo "GITHUB_TOKEN: $GITHUB_TOKEN"
         env:
-          GITHUB_USERNAME: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Checkout the repository code
