@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm") version "2.0.20"
+    `maven-publish`
 }
 
 kotlin {
@@ -18,4 +19,23 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/nburic/scoreboard")
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+            groupId = "com.github.nburic"
+        }
+    }
 }
