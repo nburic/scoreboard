@@ -13,6 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug env variables
+        run: |
+          echo "GITHUB_USERNAME: $GITHUB_USERNAME"
+          echo "GITHUB_TOKEN: $GITHUB_TOKEN"
+        env:
+          GITHUB_USERNAME: ${{ secrets.GITHUB_ACTOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       # Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v4
