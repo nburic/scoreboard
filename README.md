@@ -11,7 +11,18 @@ You can build the library by running a command:
 To change a version make sure to change it in `build.gradle.kts` file under `version`.
 
 To use the library you can import .jar file in your project. For example you can create a console app and include it in.
-Make sure to create Main.kt file that looks like this:
+
+## Usage Example
+
+To use this library, add the following dependency to your project:
+
+```kotlin
+dependencies {
+    implementation(files("libs/scoreboard-0.0.1.jar"))
+}
+```
+
+Crete Main.kt file that looks like this:
 
 ```kotlin
 fun main() {
