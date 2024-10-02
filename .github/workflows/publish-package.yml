@@ -43,6 +43,7 @@ jobs:
         run: |
           echo "This is a text"
           echo "GITHUB_ACTOR: ${{ github.actor }}"
+          echo "GITHUB_ACTOR: ${{ secrets.USERNAME }}"
           echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
           echo "GITHUB_WORKSPACE: ${{ github.workspace }}"
 
@@ -51,5 +52,5 @@ jobs:
       - name: Publish to GitHub Packages
         run: ./gradlew publish
         env:
-          GITHUB_USERNAME: ${{ github.actor }}
+          GITHUB_USERNAME: ${{ secrets.USERNAME }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
